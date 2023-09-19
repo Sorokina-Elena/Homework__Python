@@ -1,7 +1,7 @@
 def read_csv(filename):
     phone_book=[]
     fields=['Фамилия', 'Имя', 'Телефон', 'Описание']
-    with open(filename,'r',encoding='utf-8') as phb:
+    with open('phonebook.csv','r',encoding='utf-8') as phb:
         for line in phb:
             record = dict(zip(fields, line.split(',')))
             phone_book.append(record)
@@ -94,7 +94,7 @@ def work_with_phonebook():
         elif choice==6:
             user_data=input('new data ')
             add_user(phone_book,user_data)
-            write_txt('phonebook.txt',phone_book)
+            write_txt('phonebook.csv',phone_book)
         choice=show_menu()
 
 work_with_phonebook()
